@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teams</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Team</h1>
+    <p>ID: <%= teamData._id %></p>
+    <p>Name: <%= teamData.name %></p>
+    <p>Code: <%= teamData.code %></p>
+    <p>Country: <%= teamData.country %></p>
+    <!-- <p>Hello</p> -->
+    <h1>Players:</h1>
+    <form action="/teams/<%= teamData.code %>/addPlayer" method="post">
+        <input type="text" name="name" placeholder="name" />
+        <input type="number" name="age" placeholder="age" />
+        <input type="number" name="goals" placeholder="goals" />
+        <input type="hidden" name="team" value="<%= teamData._id %>" />
+        <button type="submit">Add</button>
+    </form>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Goals</th>
+      </tr>
+    <% teamData.players.forEach(function(player, i, teamData){ %>
+          <tr>
+            <td><%= player.name %></td>
+          <td><%= player.age %></td>
+          <td><%= player.goals %></td>
+          </tr>
+  <% }) %>
+</table>
+  </body>
+</html>
+<%- include('../partials/footer') %>

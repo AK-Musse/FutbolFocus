@@ -1,0 +1,18 @@
+<%- include('../partials/header', {user:user}) %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teams</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Teams</h1>
+    <% teamsData.forEach(function(team, i, teamsData){ %>
+        <a href="/teams/<%= team.code %>"><%= team.name %></a>
+        <%= i == teamsData.length-1 ? ' | ' : '' %>
+    <% }) %>
+    <!-- <p>Hello</p> -->
+  </body>
+</html>
+<%- include('../partials/footer') %>
