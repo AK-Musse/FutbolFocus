@@ -1,4 +1,4 @@
-## LLIGA
+## LALIGA
 
 ### LaLiga link: [HERE](https://laliga-web-page.herokuapp.com/teams)
 
