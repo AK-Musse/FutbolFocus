@@ -1,4 +1,3 @@
-// const axios = require("axios");
 const Player = require("../models/player");
 const Team = require("../models/team")
 
@@ -9,7 +8,6 @@ async function getTeams(req, res, next) {
 
 async function getTeam(req, res, next) {
   const teamData = await Team.findOne({code: req.params.teamCode}).populate("players");
-  // const players = Player.find({team: teamData._id});
   console.log(teamData);
   res.render('team', { teamData, user: req.user });
 }
@@ -23,14 +21,11 @@ async function addPlayer(req, res, next) {
     team: req.body.team,
   });
   player.save().then(p => {
-    // teamData.update({ "$push": {"players": p._id}});
     teamData.players.push(p);
     teamData.save();
+    res.redirect(`/teams/${req.params.teamCode}`);
   });
   console.dir(req.body);
-  // res.render('team', { teamData, user: req.user });
-  // res.end();
-  res.redirect('')
 }
 
 module.exports = {

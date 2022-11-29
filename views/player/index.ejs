@@ -1,0 +1,20 @@
+<%- include('../partials/header', {user:user}) %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>player</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1 class="editPlayerHeading">Update Player</h1>
+    <form action="/player/<%= playerData._id %>" method="post">
+        <input type="text" name="name" placeholder="name" value="<%= playerData.name%>" />
+        <input type="number" name="age" placeholder="age" value="<%= playerData.age%>" />
+        <input type="number" name="goals" placeholder="goals" value="<%= playerData.goals%>" />
+        <button type="submit">Add</button>
+    </form>
+
+  </body>
+</html>
+<%- include('../partials/footer') %>

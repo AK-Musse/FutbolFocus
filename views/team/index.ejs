@@ -8,12 +8,10 @@
   </head>
   <body>
     <h1>Team</h1>
-    <p>ID: <%= teamData._id %></p>
     <p>Name: <%= teamData.name %></p>
     <p>Code: <%= teamData.code %></p>
     <p>Country: <%= teamData.country %></p>
-    <!-- <p>Hello</p> -->
-    <h1>Players:</h1>
+    <h1>Add Players:</h1>
     <form action="/teams/<%= teamData.code %>/addPlayer" method="post">
         <input type="text" name="name" placeholder="name" />
         <input type="number" name="age" placeholder="age" />
@@ -27,12 +25,22 @@
         <th>Name</th>
         <th>Age</th>
         <th>Goals</th>
+        <th>Actions</th>
+        
       </tr>
+
     <% teamData.players.forEach(function(player, i, teamData){ %>
           <tr>
             <td><%= player.name %></td>
           <td><%= player.age %></td>
           <td><%= player.goals %></td>
+          <td>
+            <a href="/player/<%= player._id %>">Edit</a>
+            <!-- <a href="/player/<%= player._id %>" >Delete</a> -->
+            <form action="/player/delete/<%= player._id %>" method="post">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
           </tr>
   <% }) %>
 </table>

@@ -13,14 +13,6 @@ const options = {
 
 const updateDB = axios.request(options).then(function (response) {
 	console.log(response.data.response);
-    // let teamsInfo = response.data.response.map(favTeam => {
-    //     return {
-    //         name:favTeam.team.name,
-    //         founded:favTeam.team.founded,
-    //         code:favTeam.team.code,
-    //         country:favTeam.team.country,
-    //     }
-    // })
     const teams = response.data.response.map(teams => new Team({
         name:teams.team.name,
         founded:teams.team.founded,
@@ -32,7 +24,6 @@ const updateDB = axios.request(options).then(function (response) {
             console.error(error);
         }
     }))
-    // console.log("teamsInfo = ", teamsInfo)
 
 }).catch(function (error) {
 	console.error(error);

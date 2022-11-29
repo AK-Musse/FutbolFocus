@@ -10,9 +10,16 @@
     <h1>Teams</h1>
     <% teamsData.forEach(function(team, i, teamsData){ %>
         <a href="/teams/<%= team.code %>"><%= team.name %></a>
-        <%= i == teamsData.length-1 ? ' | ' : '' %>
+        <%= i == teamsData.length-1 ? '' : '' %>
     <% }) %>
-    <!-- <p>Hello</p> -->
   </body>
 </html>
+<style>
+  body {
+    display: grid;
+    padding: 30px;
+  background-image: url(../images/close-up-la-liga-flag-waving-wind-madrid-spa-july-men-top-professional-football-division-spanish-league-system-262037610.jpeg);
+    
+  }
+</style>
 <%- include('../partials/footer') %>
