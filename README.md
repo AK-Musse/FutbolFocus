@@ -10,7 +10,7 @@ This CRUD application was developed using RESTful architecture principles and ME
 
 ## Background 🏞
 
-The project includes the information of the 20 teams that are competing for the Spanish league LaLiga,the ability to add the players in their team, and space to update their stats after the matches. These features allow for LaLiga fans to stay always connected to their supported teams. 
+The project includes the information of the 20 teams that are competing for the Spanish league LaLiga,the ability to add the players in their team, and space to update their stats after the matches. These features allow the LaLiga fans to stay always connected to their supported teams. 
 
 
 Planning materials for this project were done on Trello board (view [here](https://trello.com/b/I7XD6reV/laliga-team-info))
